@@ -1,0 +1,15 @@
+version: "3"
+services:
+  cloud:
+    image: driveone/onedrive:latest
+    container_name: onedrive
+    hostname: onedrive
+    restart: unless-stopped
+    environment:
+      - ONEDRIVE_UID=1000
+      - ONEDRIVE_GID=1000
+    volumes: 
+      - /home/crom/Docker/onedrive/etc/conf:/onedrive/conf
+      - /home/crom/Docker/onedrive/etc/.config/onedrive:/home/onedrive/.config/onedrive
+      - /home/crom/Docker/onedrive/log/onedrive:/var/log/onedrive/
+      - /home/crom/OneDrive/cromksy:/onedrive/data
