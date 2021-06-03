@@ -2,7 +2,7 @@
 
 ## first run
 
-first only docker run because *onedrive authentication realtime url check*
+최초 실행시 onedrive 인증을 위해서 docker run 으로 실행이 필요함
 
 ```bash
 export ONEDRIVE_DATA_DIR="/home/crom/OneDrive/cromksy"
@@ -14,3 +14,7 @@ docker run -it --name onedrive \
 -e "ONEDRIVE_GID:1000" \
 driveone/onedrive:latest
 ```
+
+## 설정파일
+
+기본 설정 파일 위치를 /onedrive/conf 로 강제함에 따른 config 위치 확인
