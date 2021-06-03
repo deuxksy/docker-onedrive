@@ -1,2 +1,4 @@
-log/
-etc/conf
+/log/
+/etc/conf/.*
+/etc/conf/items.sqlite3
+/etc/conf/refresh_token
