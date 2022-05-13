@@ -5,14 +5,15 @@
 최초 실행시 onedrive 인증을 위해서 docker run 으로 실행이 필요함
 
 ```bash
-export ONEDRIVE_DATA_DIR="/home/crom/OneDrive/cromksy"
-mkdir -p ${ONEDRIVE_DATA_DIR}
-docker run -it --name onedrive \
+sudo podman run -it --name onedrive \
 -v "/home/crom/Docker/onedrive/etc/conf:/onedrive/conf" \
--v "${ONEDRIVE_DATA_DIR}:/onedrive/data" \
+-v "/home/crom/Docker/onedrive/log/onedrive:/var/log/onedrive/" \
+-v "/home/crom/OneDrive/cromksy:/onedrive/data" \
 -e "ONEDRIVE_UID:1000" \
 -e "ONEDRIVE_GID:1000" \
-driveone/onedrive:latest
+-e "ONEDRIVE_RESYNC:1" \
+-e "TZ:Asia/Seoul" \
+driveone/onedrive:stretch
 ```
 
 ## 설정파일

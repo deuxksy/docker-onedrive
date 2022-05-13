@@ -1,13 +1,15 @@
 version: "3"
 services:
   cloud:
-    image: driveone/onedrive:latest
+    image: driveone/onedrive:stretch
     container_name: onedrive
     hostname: onedrive
     restart: unless-stopped
     environment:
       - ONEDRIVE_UID=1000
       - ONEDRIVE_GID=1000
+      - ONEDRIVE_RESYNC=1
+      - TZ="Asia/Seoul"
     volumes: 
       - /home/crom/Docker/onedrive/etc/conf:/onedrive/conf
       - /home/crom/Docker/onedrive/log/onedrive:/var/log/onedrive/
